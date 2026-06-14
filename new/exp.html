@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traveler Experiences</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(5,15,30,.85),rgba(5,15,30,.85)),
+    url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80');
+    background-size:cover;
+    background-attachment:fixed;
+    color:white;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar{
+    width:10px;
+}
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(#00c6ff,#0072ff);
+    border-radius:20px;
+}
+
+/* Back Button */
+
+.back-btn
+{
+    position:fixed;
+    top:20px;
+    left:20px;
+    z-index:999;
+    text-decoration:none;
+    color:white;
+    padding:12px 24px;
+    border-radius:50px;
+    background:linear-gradient(135deg,#00c6ff,#0072ff);
+    box-shadow:0 10px 25px rgba(0,114,255,.35);
+    transition:.3s;
+    
+}
+
+.back-btn:hover{
+    transform:translateY(-4px);
+}
+
+/* Hero */
+
+.hero{
+    text-align:center;
+    padding:100px 20px 60px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:#dbeafe;
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+
+/* Stats */
+
+.stats{
+    width:90%;
+    max-width:1200px;
+    margin:20px auto 60px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.stat{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:25px;
+    text-align:center;
+    padding:25px;
+}
+
+.stat h2{
+    color:#4cc9ff;
+    margin-bottom:10px;
+}
+
+/* Traveler of Day */
+
+.featured{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border-radius:30px;
+    padding:35px;
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.featured h2{
+    color:#ffd700;
+    margin-bottom:15px;
+}
+
+.featured p{
+    color:#dbeafe;
+    line-height:1.8;
+}
+
+/* Search */
+
+.search-box{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.search-box input{
+    width:100%;
+    padding:16px;
+    border:none;
+    outline:none;
+    border-radius:50px;
+    font-size:16px;
+}
+
+/* Reviews */
+
+.review-grid{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:25px;
+}
+
+.review{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    padding:25px;
+    border:1px solid rgba(255,255,255,.1);
+    transition:.3s;
+}
+
+.review:hover{
+    transform:translateY(-8px);
+}
+
+.review h3{
+    margin-bottom:8px;
+}
+
+.review .place{
+    color:#7dd3fc;
+    margin-bottom:10px;
+}
+
+.review .stars{
+    color:#ffd700;
+    font-size:18px;
+    margin-bottom:12px;
+}
+
+.review p{
+    color:#e5e7eb;
+    line-height:1.7;
+}
+
+/* Form */
+
+.form-section{
+    width:90%;
+    max-width:900px;
+    margin:80px auto;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border-radius:30px;
+    padding:40px;
+}
+
+.form-section h2{
+    margin-bottom:25px;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+input,textarea,select{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:15px;
+    outline:none;
+}
+
+textarea{
+    resize:none;
+    height:140px;
+}
+
+button{
+    border:none;
+    color:white;
+    padding:15px 35px;
+    border-radius:50px;
+    cursor:pointer;
+    font-weight:600;
+    background:linear-gradient(135deg,#00c6ff,#0072ff);
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-4px);
+}
+
+/* Footer */
+
+footer{
+    margin-top:80px;
+    text-align:center;
+    padding:40px;
+    background:rgba(0,0,0,.35);
+}
+
+footer p{
+    color:#cbd5e1;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.6rem;
+}
+
+.review-grid{
+    grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<a href="page1.html" class="back-btn">← Back</a>
+
+<section class="hero">
+    <h1>🌍 Traveler Experiences</h1>
+    <p>
+        Discover real stories, unforgettable adventures,
+        and honest reviews from travelers across India.
+    </p>
+</section>
+
+<div class="stats">
+    <div class="stat">
+        <h2 id="travelerCount">3</h2>
+        <p>Travelers</p>
+    </div>
+
+    <div class="stat">
+        <h2>4.9 ⭐</h2>
+        <p>Average Rating</p>
+    </div>
+
+    <div class="stat">
+        <h2>25+</h2>
+        <p>Destinations Reviewed</p>
+    </div>
+</div>
+
+<div class="featured">
+    <h2>🏆 Traveler of the Day</h2>
+    <p>
+        <strong>Aditi Sharma</strong> ⭐⭐⭐⭐⭐<br><br>
+        "Spiti Valley changed the way I see nature.
+        Watching the Milky Way from the mountains was unforgettable."
+    </p>
+</div>
+
+<div class="search-box">
+    <input type="text" id="searchInput" placeholder="🔍 Search destination...">
+</div>
+
+<div class="review-grid" id="reviewContainer">
+
+    <div class="review">
+        <h3>Aditi Sharma</h3>
+        <div class="place">📍 Spiti Valley</div>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>
+            Spiti felt like another planet.
+            The mountains, monasteries and night sky were magical.
+        </p>
+    </div>
+
+    <div class="review">
+        <h3>Rahul Verma</h3>
+        <div class="place">📍 Gulmarg</div>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>
+            Gulmarg in winter was breathtaking.
+            Snow everywhere and amazing gondola rides.
+        </p>
+    </div>
+
+    <div class="review">
+        <h3>Priya Patel</h3>
+        <div class="place">📍 Tawang</div>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>
+            Peaceful, scenic and less crowded.
+            One of the most underrated places in India.
+        </p>
+    </div>
+
+</div>
+
+<section class="form-section">
+
+    <h2>✍ Share Your Experience</h2>
+
+    <div class="form-group">
+        <input type="text" id="name" placeholder="Your Name">
+    </div>
+
+    <div class="form-group">
+        <input type="text" id="place" placeholder="Destination Visited">
+    </div>
+
+    <div class="form-group">
+        <select id="rating">
+            <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐ (5 Stars)</option>
+            <option value="⭐⭐⭐⭐">⭐⭐⭐⭐ (4 Stars)</option>
+            <option value="⭐⭐⭐">⭐⭐⭐ (3 Stars)</option>
+            <option value="⭐⭐">⭐⭐ (2 Stars)</option>
+            <option value="⭐">⭐ (1 Star)</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <textarea id="reviewText" placeholder="Tell us about your experience..."></textarea>
+    </div>
+
+    <button onclick="addReview()">Post Review</button>
+
+</section>
+
+<footer>
+    <h2>Adventure Awaits</h2>
+    <p>Share your stories. Inspire the next traveler.</p>
+</footer>
+
+<script>
+
+let reviewContainer = document.getElementById("reviewContainer");
+
+window.onload = function(){
+    let saved = JSON.parse(localStorage.getItem("reviews")) || [];
+
+    saved.forEach(r=>{
+        createReview(r.name,r.place,r.rating,r.text);
+    });
+
+    updateCount();
+};
+
+function addReview(){
+
+    let name = document.getElementById("name").value;
+    let place = document.getElementById("place").value;
+    let rating = document.getElementById("rating").value;
+    let text = document.getElementById("reviewText").value;
+
+    if(name==="" || place==="" || text===""){
+        alert("Please fill all fields");
+        return;
+    }
+
+    let review = {
+        name:name,
+        place:place,
+        rating:rating,
+        text:text
+    };
+
+    createReview(name,place,rating,text);
+
+    let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+    reviews.unshift(review);
+    localStorage.setItem("reviews",JSON.stringify(reviews));
+
+    document.getElementById("name").value="";
+    document.getElementById("place").value="";
+    document.getElementById("reviewText").value="";
+
+    updateCount();
+}
+
+function createReview(name,place,rating,text){
+
+    let div = document.createElement("div");
+
+    div.classList.add("review");
+
+    div.innerHTML = `
+        <h3>${name}</h3>
+        <div class="place">📍 ${place}</div>
+        <div class="stars">${rating}</div>
+        <p>${text}</p>
+    `;
+
+    reviewContainer.prepend(div);
+}
+
+function updateCount(){
+    let count = document.querySelectorAll(".review").length;
+    document.getElementById("travelerCount").innerText = count;
+}
+
+document.getElementById("searchInput").addEventListener("keyup",function(){
+
+    let value = this.value.toLowerCase();
+
+    let reviews = document.querySelectorAll(".review");
+
+    reviews.forEach(card=>{
+
+        let text = card.innerText.toLowerCase();
+
+        if(text.includes(value)){
+            card.style.display="block";
+        }else{
+            card.style.display="none";
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

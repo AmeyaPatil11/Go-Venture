@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beaches of India</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(180deg,#041c32,#064663,#0ea5e9);
+color:white;
+overflow-x:hidden;
+min-height:100vh;
+}
+
+.back-btn{
+position:fixed;
+top:20px;
+left:20px;
+padding:12px 25px;
+border-radius:50px;
+background:linear-gradient(135deg,#00c6ff,#0072ff);
+color:white;
+text-decoration:none;
+font-weight:600;
+z-index:999;
+box-shadow:0 10px 25px rgba(0,114,255,.4);
+}
+
+.hero{
+height:85vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.5)),
+url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80');
+background-size:cover;
+background-position:center;
+}
+
+.hero-content{
+max-width:900px;
+}
+
+.hero h1{
+font-size:4.5rem;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:1.2rem;
+line-height:1.8;
+color:#dbeafe;
+}
+
+.quote{
+text-align:center;
+padding:50px 20px;
+font-size:1.3rem;
+font-style:italic;
+color:#e0f2fe;
+}
+
+.grid{
+width:90%;
+max-width:1400px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+padding-bottom:80px;
+}
+
+.card{
+height:340px;
+border-radius:25px;
+overflow:hidden;
+position:relative;
+cursor:pointer;
+background-size:cover;
+background-position:center;
+transition:.4s;
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.02);
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(to top,
+rgba(0,0,0,.85),
+rgba(0,0,0,.1));
+}
+
+.glass{
+position:absolute;
+bottom:0;
+width:100%;
+padding:25px;
+backdrop-filter:blur(10px);
+}
+
+.glass h2{
+margin-bottom:10px;
+}
+
+.glass p{
+color:#dbeafe;
+}
+
+.goa{
+background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80');
+}
+
+.andaman{
+background-image:url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80');
+}
+
+.varkala{
+background-image:url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80');
+}
+
+.kovalam{
+background-image:url('https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1200&q=80');
+}
+
+.gokarna{
+background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80');
+}
+
+.tarkarli{
+background-image:url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80');
+}
+
+.puri{
+background-image:url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80');
+}
+
+.marina{
+background-image:url('https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1200&q=80');
+}
+
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.8);
+justify-content:center;
+align-items:center;
+padding:20px;
+z-index:9999;
+}
+
+.modal-content{
+background:white;
+color:#222;
+width:100%;
+max-width:700px;
+padding:35px;
+border-radius:25px;
+position:relative;
+}
+
+.close{
+position:absolute;
+top:15px;
+right:20px;
+font-size:30px;
+cursor:pointer;
+}
+
+.bucket-btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+border-radius:50px;
+background:linear-gradient(135deg,#00c6ff,#0072ff);
+color:white;
+text-decoration:none;
+}
+
+footer{
+background:#02111d;
+padding:50px;
+text-align:center;
+}
+
+@media(max-width:900px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:2.7rem;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<a href="index.html" class="back-btn">← Back</a>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>🏖 Beaches Of India</h1>
+
+<p>
+Discover crystal-clear waters, tropical islands,
+golden sands and unforgettable sunsets across India.
+</p>
+
+</div>
+
+</section>
+
+<div class="quote">
+"Let the waves carry your worries away."
+</div>
+
+<div class="grid">
+    <div class="card goa" onclick="openModal('Palolem Beach','Goa','Famous for calm waters, beach shacks and stunning sunsets.')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>🏝 Palolem Beach</h2>
+<p>Goa's tropical paradise</p>
+</div>
+</div>
+
+<div class="card andaman" onclick="openModal('Radhanagar Beach','Andaman Islands','Frequently ranked among Asia’s most beautiful beaches.')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>🌊 Radhanagar Beach</h2>
+<p>Andaman's crown jewel</p>
+</div>
+</div>
+
+<div class="card varkala" onclick="openModal('Varkala Beach','Kerala','Cliffside beach offering breathtaking Arabian Sea views.')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>☀️ Varkala Beach</h2>
+<p>Kerala's scenic cliffs</p>
+</div>
+</div>
+
+<div class="card kovalam" onclick="openModal('Kovalam Beach','Kerala','Popular for surfing, resorts and relaxing beach vibes.')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>🌴 Kovalam Beach</h2>
+<p>India's beach retreat</p>
+</div>
+</div>
+
+<div class="card gokarna" onclick="openModal('Gokarna Beach','Karnataka','A peaceful alternative to Goa with beautiful coastline.')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>🏖 Gokarna Beach</h2>
+<p>Hidden coastal gem</p>
+</div>
+</div>
+
+<div class="card tarkarli" onclick="openModal('Tarkarli Beach','Maharashtra','Known for scuba diving and crystal-clear waters.')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>🤿 Tarkarli Beach</h2>
+<p>Maldives of Maharashtra</p>
+</div>
+</div>
+
+<div class="card marina" onclick="openModal('Marina Beach','Tamil Nadu','One of the longest urban beaches in the world.')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>🌅 Marina Beach</h2>
+<p>Chennai's iconic coastline</p>
+</div>
+</div>
+
+<div class="card puri" onclick="openModal('Puri Beach','Odisha','Famous for its golden sand and spiritual atmosphere.')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>⛱ Puri Beach</h2>
+<p>Spiritual coastal destination</p>
+</div>
+</div>
+
+</div>
+
+<section style="
+width:90%;
+max-width:1300px;
+margin:auto;
+padding-bottom:80px;
+">
+
+<div style="
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+padding:40px;
+border-radius:25px;
+text-align:center;
+">
+
+<h2 style="margin-bottom:20px;">
+🌊 Why Visit Indian Beaches?
+</h2>
+
+<p style="
+line-height:1.9;
+color:#dbeafe;
+max-width:900px;
+margin:auto;
+">
+India offers everything from party beaches in Goa,
+untouched islands in Andaman, cliffside views in Kerala,
+scuba-diving adventures in Tarkarli and spiritual sunsets
+at Puri. Every coastline has a unique story waiting to be explored.
+</p>
+
+</div>
+
+</section>
+<!-- MODAL -->
+
+<div id="modal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">&times;</span>
+
+<h2 id="placeTitle"></h2>
+
+<p style="margin-top:15px;">
+<strong>📍 Location:</strong>
+<span id="placeLocation"></span>
+</p>
+
+<p id="placeDescription"
+style="
+margin-top:15px;
+line-height:1.8;
+color:#555;
+">
+</p>
+
+<p style="
+margin-top:15px;
+line-height:1.8;
+">
+⭐ Best Time: October - March
+</p>
+
+<p style="
+margin-top:10px;
+line-height:1.8;
+">
+💰 Budget: ₹4,000 - ₹20,000
+</p>
+
+<p style="
+margin-top:10px;
+line-height:1.8;
+">
+📸 Perfect for photography, relaxation, water sports and sunsets.
+</p>
+
+<a href="#" class="bucket-btn">
+Add To Bucket List ❤️
+</a>
+
+</div>
+
+</div>
+
+<!-- WAVES -->
+
+<div class="waves">
+
+<div class="wave wave1"></div>
+<div class="wave wave2"></div>
+
+</div>
+
+<style>
+
+.waves{
+position:relative;
+height:120px;
+overflow:hidden;
+}
+
+.wave{
+position:absolute;
+bottom:0;
+left:0;
+width:200%;
+height:120px;
+background:rgba(255,255,255,.08);
+border-radius:45%;
+animation:wave 12s linear infinite;
+}
+
+.wave2{
+opacity:.5;
+animation-duration:18s;
+}
+
+@keyframes wave{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-50%);
+}
+
+}
+
+</style>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2 style="margin-bottom:10px;">
+🏖 Explore India's Coastline
+</h2>
+
+<p>
+Sunsets • Waves • Adventures • Memories
+</p>
+
+<br>
+
+<p style="color:#94a3b8;">
+© 2026 Wander India. All Rights Reserved.
+</p>
+
+</footer>
+
+<script>
+
+function openModal(title,location,description){
+
+document.getElementById("modal").style.display="flex";
+
+document.getElementById("placeTitle").innerText=title;
+
+document.getElementById("placeLocation").innerText=location;
+
+document.getElementById("placeDescription").innerText=description;
+
+}
+
+function closeModal(){
+
+document.getElementById("modal").style.display="none";
+
+}
+
+window.onclick=function(event){
+
+let modal=document.getElementById("modal");
+
+if(event.target===modal){
+
+modal.style.display="none";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

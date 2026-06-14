@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About India Travel</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f4f7fb;
+overflow-x:hidden;
+}
+
+/* Hero */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1920&q=80');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero-content h1{
+
+    font-size:4rem;
+    font-weight:900;
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #7dd3fc,
+        #3b82f6,
+        #8b5cf6
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+}
+
+.hero p{
+font-size:1.2rem;
+line-height:1.8;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:15px 35px;
+border-radius:50px;
+background:linear-gradient(135deg,#00c6ff,#0072ff);
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+/* Back Button */
+
+.back{
+position:fixed;
+top:20px;
+left:20px;
+z-index:1000;
+padding:12px 22px;
+border-radius:50px;
+background:linear-gradient(135deg,#00c6ff,#0072ff);
+color:white;
+text-decoration:none;
+}
+
+/* Stats */
+
+.stats{
+padding:80px 10%;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.stat{
+background:white;
+padding:35px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.stat h2{
+font-size:3rem;
+color:#0072ff;
+}
+
+/* Why India */
+
+.section{
+padding:80px 10%;
+}
+
+.title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.title h2{
+font-size:3rem;
+margin-bottom:15px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+    background:linear-gradient(
+    135deg,
+    #0f172a,
+    #1e40af,
+    #2563eb,
+    #38bdf8
+    );
+
+    padding:30px;
+    border-radius:25px;
+    color:white;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+    0 15px 35px rgba(37,99,235,.35);
+
+    transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+    color:azure;
+    margin-bottom:15px;
+}
+.card p{
+    color:beige;
+}
+
+/* Quote */
+
+.quote{
+margin:80px 10%;
+padding:60px;
+border-radius:30px;
+background:linear-gradient(135deg,#0072ff,#00c6ff);
+color:white;
+text-align:center;
+}
+
+.quote h2{
+font-size:2rem;
+line-height:1.7;
+}
+
+/* Journey */
+
+.timeline{
+max-width:1000px;
+margin:auto;
+padding:50px 20px 80px;
+}
+
+.step{
+background:white;
+margin:20px 0;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.step h3{
+color:#0072ff;
+margin-bottom:10px;
+}
+
+/* Footer */
+
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:50px;
+}
+
+footer p{
+color:#cbd5e1;
+margin-top:10px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.8rem;
+}
+
+.title h2{
+font-size:2rem;
+}
+
+.quote h2{
+font-size:1.4rem;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<a href="index.html" class="back">← Back</a>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1> Discover Incredible India</h1>
+
+<p>
+From the snow-covered Himalayas to tropical beaches,
+ancient temples to futuristic cities, India offers
+experiences that no other country can replicate.
+Every journey here tells a different story.
+</p>
+
+<a href="#about" class="btn">Explore More</a>
+
+</div>
+
+</section>
+
+<section class="stats" id="about">
+
+<div class="stat">
+<h2>43</h2>
+<p>UNESCO World Heritage Sites</p>
+</div>
+
+<div class="stat">
+<h2>28</h2>
+<p>States With Unique Cultures</p>
+</div>
+
+<div class="stat">
+<h2>7000+</h2>
+<p>Kilometers of Coastline</p>
+</div>
+
+<div class="stat">
+<h2>100+</h2>
+<p>Major Languages Spoken</p>
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="title">
+<h2>Why Travel To India?</h2>
+<p>
+A land where every state feels like a new country.
+</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>🏔 Majestic Mountains</h3>
+<p>
+Explore Kashmir, Ladakh, Himachal and Uttarakhand's breathtaking landscapes.
+</p>
+</div>
+
+<div class="card">
+<h3>🏝 Stunning Beaches</h3>
+<p>
+Relax on the beautiful beaches of Goa, Andaman and Kerala.
+</p>
+</div>
+
+<div class="card">
+<h3>🏰 Rich Heritage</h3>
+<p>
+Discover forts, palaces and monuments built centuries ago.
+</p>
+</div>
+
+<div class="card">
+<h3>🍛 Incredible Food</h3>
+<p>
+Every region offers unique flavors and culinary traditions.
+</p>
+</div>
+
+<div class="card">
+<h3>🎉 Festivals</h3>
+<p>
+Experience colorful celebrations throughout the year.
+</p>
+</div>
+
+<div class="card">
+<h3>🦁 Wildlife</h3>
+<p>
+See Bengal tigers, elephants and rare species in national parks.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="quote">
+
+<h2>
+"Traveling across India is not a trip. It is a collection of hundreds of unforgettable stories."
+</h2>
+
+</section>
+
+<section class="timeline">
+
+<div class="title">
+<h2>A Traveler's Journey</h2>
+</div>
+
+<div class="step">
+<h3>📍 Choose A Destination</h3>
+<p>Mountains, beaches, forests or heritage cities.</p>
+</div>
+
+<div class="step">
+<h3>🎒 Pack Your Adventure</h3>
+<p>Prepare for unforgettable experiences.</p>
+</div>
+
+<div class="step">
+<h3>📸 Capture Memories</h3>
+<p>Every destination becomes a lifetime memory.</p>
+</div>
+
+<div class="step">
+<h3>🌍 Share Your Story</h3>
+<p>Inspire the next traveler with your journey.</p>
+</div>
+
+</section>
+
+<footer>
+<h2>Wander India</h2>
+<p>Explore • Dream • Discover</p>
+</footer>
+
+</body>
+</html>

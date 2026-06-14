@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Choose Your Adventure</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)),
+url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px;
+}
+
+.container{
+width:100%;
+max-width:1200px;
+text-align:center;
+color:white;
+}
+
+h1{
+font-size:3.5rem;
+margin-bottom:10px;
+}
+
+.subtitle{
+font-size:1.1rem;
+margin-bottom:50px;
+opacity:.9;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:rgba(255,255,255,.1);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.2);
+border-radius:25px;
+padding:35px;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,.3);
+}
+
+.card h2{
+font-size:2rem;
+margin-bottom:15px;
+}
+
+.card p{
+line-height:1.8;
+margin-bottom:25px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 35px;
+border-radius:50px;
+text-decoration:none;
+color:white;
+font-weight:600;
+background:linear-gradient(135deg,#00c6ff,#0072ff);
+transition:.4s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+box-shadow:0 10px 25px rgba(0,114,255,.5);
+}
+
+.quote{
+margin-top:60px;
+font-size:1.2rem;
+font-style:italic;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>Where Would You Like To Explore?</h1>
+
+<p class="subtitle">
+Choose your next adventure and discover India's hidden gems.
+</p>
+
+<div class="cards">
+
+<div class="card">
+<h2>🏔 Mountains</h2>
+<p>
+Snowy peaks, valleys, hidden villages and breathtaking views.
+</p>
+
+<a href="mountains.html" class="btn">
+Explore Mountains
+</a>
+</div>
+
+<div class="card">
+<h2>🏖 Beaches</h2>
+<p>
+Golden sands, turquoise waters and stunning sunsets.
+</p>
+
+<a href="beaches.html" class="btn">
+Explore Beaches
+</a>
+</div>
+
+<div class="card">
+<h2>🥾 Treks</h2>
+<p>
+Adventure routes, hidden trails and unforgettable journeys.
+</p>
+
+<a href="treks.html" class="btn">
+Explore Treks
+</a>
+</div>
+
+</div>
+
+<div class="quote">
+"Travel far enough, you meet yourself."
+</div>
+
+</div>
+
+</body>
+</html>

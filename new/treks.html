@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treks Of India</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(180deg,#051923,#0a3d62,#145374);
+color:white;
+overflow-x:hidden;
+min-height:100vh;
+}
+
+.back-btn{
+position:fixed;
+top:20px;
+left:20px;
+padding:12px 25px;
+border-radius:50px;
+background:linear-gradient(135deg,#00c6ff,#0072ff);
+color:white;
+text-decoration:none;
+font-weight:600;
+z-index:999;
+box-shadow:0 10px 25px rgba(0,114,255,.4);
+}
+
+.hero{
+height:85vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)),
+url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80');
+background-size:cover;
+background-position:center;
+}
+
+.hero-content{
+max-width:900px;
+}
+
+.hero h1{
+font-size:4.5rem;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:1.2rem;
+line-height:1.8;
+color:#dbeafe;
+}
+
+.quote{
+text-align:center;
+padding:50px 20px;
+font-size:1.3rem;
+font-style:italic;
+color:#e0f2fe;
+}
+
+.grid{
+width:90%;
+max-width:1400px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+padding-bottom:80px;
+}
+
+.card{
+height:340px;
+border-radius:25px;
+overflow:hidden;
+position:relative;
+cursor:pointer;
+background-size:cover;
+background-position:center;
+transition:.4s;
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.02);
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(to top,
+rgba(0,0,0,.85),
+rgba(0,0,0,.1));
+}
+
+.glass{
+position:absolute;
+bottom:0;
+width:100%;
+padding:25px;
+backdrop-filter:blur(10px);
+}
+
+.glass h2{
+margin-bottom:10px;
+}
+
+.glass p{
+color:#dbeafe;
+}
+
+/* Trek Images */
+
+.kedarkantha{
+background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80');
+}
+
+.valley{
+background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80');
+}
+
+.hampta{
+background-image:url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=80');
+}
+
+.triund{
+background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80');
+}
+
+.sandakphu{
+background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80');
+}
+
+.tarsar{
+background-image:url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80');
+}
+
+.goechala{
+background-image:url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80');
+}
+
+.rupin{
+background-image:url('https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=1200&q=80');
+}
+
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.8);
+justify-content:center;
+align-items:center;
+padding:20px;
+z-index:9999;
+}
+
+.modal-content{
+background:white;
+color:#222;
+width:100%;
+max-width:700px;
+padding:35px;
+border-radius:25px;
+position:relative;
+}
+
+.close{
+position:absolute;
+top:15px;
+right:20px;
+font-size:30px;
+cursor:pointer;
+}
+
+.bucket-btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+border-radius:50px;
+background:linear-gradient(135deg,#00c6ff,#0072ff);
+color:white;
+text-decoration:none;
+}
+
+footer{
+background:#02111d;
+padding:50px;
+text-align:center;
+}
+
+@media(max-width:900px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:2.7rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="index.html" class="back-btn">← Back</a>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>🥾 Treks Of India</h1>
+
+<p>
+Walk through Himalayan trails, alpine meadows,
+snow-covered passes and hidden valleys. Every trek
+is a journey beyond ordinary travel.
+</p>
+
+</div>
+
+</section>
+
+<div class="quote">
+"The journey is the destination."
+</div>
+
+<div class="grid">
+    <div class="card kedarkantha" onclick="openModal('Kedarkantha Trek','Uttarakhand','One of India’s most famous winter treks with snowy forests and panoramic summit views.')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>🏔 Kedarkantha Trek</h2>
+<p>Winter Wonderland</p>
+</div>
+</div>
+
+<div class="card valley" onclick="openModal('Valley Of Flowers Trek','Uttarakhand','A UNESCO World Heritage site filled with rare Himalayan flowers.')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>🌸 Valley Of Flowers</h2>
+<p>Nature's Masterpiece</p>
+</div>
+</div>
+
+<div class="card hampta" onclick="openModal('Hampta Pass Trek','Himachal Pradesh','Cross lush green valleys into dramatic barren landscapes.')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>⛰ Hampta Pass</h2>
+<p>Adventure Through Contrasts</p>
+</div>
+</div>
+
+<div class="card triund" onclick="openModal('Triund Trek','Himachal Pradesh','Perfect beginner trek with breathtaking Dhauladhar views.')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>🥾 Triund Trek</h2>
+<p>Beginner's Paradise</p>
+</div>
+</div>
+
+<div class="card sandakphu" onclick="openModal('Sandakphu Trek','West Bengal','Witness Everest, Kanchenjunga, Lhotse and Makalu from one trail.')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>🌄 Sandakphu Trek</h2>
+<p>Four Highest Peaks View</p>
+</div>
+</div>
+
+<div class="card tarsar" onclick="openModal('Tarsar Marsar Trek','Kashmir','Crystal-clear alpine lakes surrounded by lush meadows.')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>💎 Tarsar Marsar</h2>
+<p>Kashmir's Hidden Paradise</p>
+</div>
+</div>
+
+<div class="card goechala" onclick="openModal('Goechala Trek','Sikkim','Offers spectacular close-up views of Kanchenjunga.')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>🏕 Goechala Trek</h2>
+<p>Ultimate Himalayan Experience</p>
+</div>
+</div>
+
+<div class="card rupin" onclick="openModal('Rupin Pass Trek','Himachal Pradesh','Known for waterfalls, hanging villages and snow bridges.')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>🚩 Rupin Pass</h2>
+<p>India's Most Dramatic Trek</p>
+</div>
+</div>
+
+</div>
+
+<section style="
+width:90%;
+max-width:1300px;
+margin:auto;
+padding-bottom:80px;
+">
+
+<div style="
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+padding:40px;
+border-radius:25px;
+text-align:center;
+">
+
+<h2 style="margin-bottom:20px;">
+🥾 Why Trek In India?
+</h2>
+
+<p style="
+line-height:1.9;
+color:#dbeafe;
+max-width:900px;
+margin:auto;
+">
+India offers some of the most diverse trekking experiences in the world.
+From snow-covered Himalayan peaks and flower-filled valleys to hidden alpine lakes and ancient mountain villages,
+every trek tells a unique story. Whether you're a beginner or an experienced adventurer,
+there's a trail waiting to challenge and inspire you.
+</p>
+
+</div>
+
+</section>
+<!-- TREK MODAL -->
+
+<div id="modal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">&times;</span>
+
+<h2 id="placeTitle"></h2>
+
+<p style="margin-top:15px;">
+<strong>📍 Location:</strong>
+<span id="placeLocation"></span>
+</p>
+
+<p id="placeDescription"
+style="
+margin-top:15px;
+line-height:1.8;
+color:#555;
+">
+</p>
+
+<div style="
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-top:20px;
+">
+
+<span style="
+background:#10b981;
+color:white;
+padding:8px 15px;
+border-radius:30px;
+font-size:.9rem;
+">
+⭐ Best Season: Mar-Jun
+</span>
+
+<span style="
+background:#3b82f6;
+color:white;
+padding:8px 15px;
+border-radius:30px;
+font-size:.9rem;
+">
+🥾 Difficulty: Moderate
+</span>
+
+<span style="
+background:#f59e0b;
+color:white;
+padding:8px 15px;
+border-radius:30px;
+font-size:.9rem;
+">
+💰 Budget: ₹5k-30k
+</span>
+
+</div>
+
+<p style="
+margin-top:20px;
+line-height:1.8;
+">
+🏕 Perfect for camping, photography, mountain lovers,
+stargazing and adventure seekers.
+</p>
+
+<p style="
+margin-top:10px;
+line-height:1.8;
+">
+📸 Don't forget to carry a camera,
+warm clothes and plenty of energy for unforgettable views.
+</p>
+
+<a href="#" class="bucket-btn">
+Add To Adventure List ❤️
+</a>
+
+</div>
+
+</div>
+
+<!-- MOUNTAIN DIVIDER -->
+
+<div class="mountain-divider">
+
+<div class="mountain mountain1"></div>
+<div class="mountain mountain2"></div>
+
+</div>
+
+<style>
+
+.mountain-divider{
+position:relative;
+height:140px;
+overflow:hidden;
+margin-top:30px;
+}
+
+.mountain{
+position:absolute;
+bottom:-40px;
+width:120%;
+height:180px;
+background:rgba(255,255,255,.08);
+clip-path:polygon(
+0% 100%,
+10% 70%,
+20% 100%,
+35% 45%,
+50% 100%,
+65% 40%,
+80% 100%,
+90% 65%,
+100% 100%
+);
+animation:floatMountain 8s ease-in-out infinite;
+}
+
+.mountain2{
+opacity:.5;
+animation-delay:2s;
+}
+
+@keyframes floatMountain{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+</style>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2 style="margin-bottom:10px;">
+🏔 Conquer More Trails
+</h2>
+
+<p>
+Adventure • Nature • Mountains • Memories
+</p>
+
+<br>
+
+<p style="color:#94a3b8;">
+© 2026 Trek India. Explore Beyond Limits.
+</p>
+
+</footer>
+
+<script>
+
+function openModal(title,location,description){
+
+document.getElementById("modal").style.display="flex";
+
+document.getElementById("placeTitle").innerText=title;
+
+document.getElementById("placeLocation").innerText=location;
+
+document.getElementById("placeDescription").innerText=description;
+
+}
+
+function closeModal(){
+
+document.getElementById("modal").style.display="none";
+
+}
+
+window.onclick=function(event){
+
+let modal=document.getElementById("modal");
+
+if(event.target===modal){
+
+modal.style.display="none";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

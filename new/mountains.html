@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mountains of India</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f7fb;
+    min-height:100vh;
+}
+
+/* BACK BUTTON */
+
+.back-btn{
+    position:fixed;
+    top:20px;
+    left:20px;
+    z-index:1000;
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:50px;
+    color:white;
+    font-weight:600;
+    background:linear-gradient(135deg,#00c6ff,#0072ff);
+    box-shadow:0 10px 25px rgba(0,114,255,.3);
+    transition:.3s;
+}
+
+.back-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:100px 20px 60px;
+}
+
+.hero h1{
+    font-size:4rem;
+    background:linear-gradient(135deg,#0072ff,#00c6ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    max-width:800px;
+    margin:20px auto;
+    color:#666;
+    line-height:1.8;
+}
+
+.quote{
+    text-align:center;
+    font-size:1.2rem;
+    color:#555;
+    font-style:italic;
+    margin-bottom:50px;
+}
+
+/* GRID */
+
+.grid{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+    padding-bottom:80px;
+}
+
+/* CARDS */
+
+.card{
+    height:350px;
+    border-radius:25px;
+    overflow:hidden;
+    position:relative;
+    background-size:cover;
+    background-position:center;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.02);
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,
+    rgba(0,0,0,.75),
+    rgba(0,0,0,.15));
+}
+
+.glass{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    color:white;
+    padding:25px;
+    backdrop-filter:blur(10px);
+}
+
+.glass h2{
+    margin-bottom:10px;
+}
+
+.glass p{
+    font-size:.95rem;
+    opacity:.9;
+}
+
+/* DESTINATION IMAGES */
+
+.gulmarg{
+background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80');
+}
+
+.sonamarg{
+background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80');
+}
+
+.spiti{
+background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80');
+}
+
+.auli{
+background-image:url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=80');
+}
+
+.tawang{
+background-image:url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80');
+}
+
+.ziro{
+background-image:url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80');
+}
+
+/* MODAL */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    z-index:9999;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.modal-content{
+    width:100%;
+    max-width:700px;
+    background:white;
+    border-radius:25px;
+    padding:35px;
+    position:relative;
+    animation:popup .3s ease;
+}
+
+@keyframes popup{
+from{
+transform:scale(.8);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+.close{
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-size:30px;
+    cursor:pointer;
+}
+
+.modal h2{
+    margin-bottom:15px;
+    color:#0072ff;
+}
+
+.modal p{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:12px;
+}
+
+.bucket-btn{
+    margin-top:20px;
+    display:inline-block;
+    text-decoration:none;
+    color:white;
+    padding:14px 30px;
+    border-radius:50px;
+    background:linear-gradient(135deg,#00c6ff,#0072ff);
+    transition:.3s;
+}
+
+.bucket-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* FOOTER */
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:50px;
+}
+
+footer p{
+    color:#cbd5e1;
+}
+
+@media(max-width:900px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:2.5rem;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<a href="home2.html" class="back-btn">← Back</a>
+
+<section class="hero">
+<h1>🏔 Mountains of India</h1>
+
+<p>
+Discover India's most breathtaking mountain destinations,
+hidden valleys, snow-capped peaks and unforgettable adventures.
+</p>
+</section>
+
+<div class="quote">
+"The best view comes after the hardest climb."
+</div>
+
+<div class="grid">
+
+<div class="card gulmarg" onclick="openModal('Gulmarg')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>Gulmarg</h2>
+<p>Snow paradise of Kashmir</p>
+</div>
+</div>
+
+<div class="card sonamarg" onclick="openModal('Sonamarg')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>Sonamarg</h2>
+<p>Meadow of Gold</p>
+</div>
+</div>
+
+<div class="card spiti" onclick="openModal('Spiti Valley')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>Spiti Valley</h2>
+<p>Cold desert mountains</p>
+</div>
+</div>
+
+<div class="card auli" onclick="openModal('Auli')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>Auli</h2>
+<p>India's skiing destination</p>
+</div>
+</div>
+
+<div class="card tawang" onclick="openModal('Tawang')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>Tawang</h2>
+<p>Hidden Himalayan beauty</p>
+</div>
+</div>
+
+<div class="card ziro" onclick="openModal('Ziro Valley')">
+<div class="overlay"></div>
+<div class="glass">
+<h2>Ziro Valley</h2>
+<p>Green mountain paradise</p>
+</div>
+</div>
+
+</div>
+
+<!-- MODAL -->
+
+<div id="modal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">&times;</span>
+
+<h2 id="title"></h2>
+
+<p><strong>Best Time:</strong> October - June</p>
+
+<p>
+Perfect destination for travelers seeking stunning landscapes,
+adventure, photography and unforgettable mountain views.
+</p>
+
+<p>
+⭐ Famous Attractions:
+Scenic valleys, local culture, trekking routes and breathtaking viewpoints.
+</p>
+
+<p>
+💰 Budget:
+₹5,000 - ₹25,000 depending on travel style.
+</p>
+
+<p>
+🎒 Tip:
+Visit during sunrise or sunset for the most spectacular views.
+</p>
+
+<a href="#" class="bucket-btn">Add To Bucket List</a>
+
+</div>
+
+</div>
+
+<footer>
+<h2>Explore More. Climb Higher.</h2>
+<p>Every mountain has a story waiting for you.</p>
+</footer>
+
+<script>
+
+function openModal(place){
+    document.getElementById("modal").style.display="flex";
+    document.getElementById("title").innerText=place;
+}
+
+function closeModal(){
+    document.getElementById("modal").style.display="none";
+}
+
+window.onclick=function(e){
+    let modal=document.getElementById("modal");
+
+    if(e.target===modal){
+        modal.style.display="none";
+    }
+}
+
+</script>
+
+</body>
+</html>
